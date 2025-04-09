@@ -98,7 +98,7 @@ function Matka() {
   const [selectedMarket, setSelectedMarket] = useState(null);
 
   useEffect(() => {
-    axios.get(`h${process.env.REACT_APP_BACKEND_URL}/api/admin/getMatkas`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/admin/getMatkas`)
       .then(response => {
         setMarketData(response.data);
       })
