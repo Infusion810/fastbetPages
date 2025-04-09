@@ -21,7 +21,7 @@ function Matka() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/users/admin2`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/admin2`)
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.flatMap((bid, index) =>
@@ -48,7 +48,7 @@ function Matka() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:5000/api/admin/creatematka`, formData);
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/admin/creatematka`, formData);
       alert("Matka entry created successfully!");
       setFormData({
         marketName: "",
@@ -98,7 +98,7 @@ function Matka() {
   const [selectedMarket, setSelectedMarket] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/admin/getMatkas`)
+    axios.get(`h${process.env.REACT_APP_BACKEND_URL}/api/admin/getMatkas`)
       .then(response => {
         setMarketData(response.data);
       })
@@ -122,7 +122,7 @@ function Matka() {
   };
 
   const handleSave = () => {
-    axios.put(`http://localhost:5000/api/admin/updateMarket/${selectedMarket._id}`, selectedMarket)
+    axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/admin/updateMarket/${selectedMarket._id}`, selectedMarket)
       .then(() => {
         setMarketData(marketData.map(m => (m._id === selectedMarket._id ? selectedMarket : m)));
         handleClose();
@@ -134,7 +134,7 @@ function Matka() {
   const handleDelete = async (marketId) => {
     try {
       // Send delete request to the backend
-      await axios.delete(`http://localhost:5000/api/admin/deleteMarket/${marketId}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/admin/deleteMarket/${marketId}`);
       
       // Remove the deleted market from the state (UI)
       setMarketData(marketData.filter(m => m._id !== marketId));
