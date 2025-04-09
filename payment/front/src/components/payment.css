@@ -1,0 +1,218 @@
+.component-space {
+    padding: 20px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #1c2130 0%, #0f1523 100%);
+    min-height: 100vh;
+  }
+  
+  .card {
+    margin-bottom: 25px;
+    background: linear-gradient(to right, rgba(34, 43, 69, 0.9), rgba(20, 25, 41, 0.9));
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #5e72e4 #121728;
+  }
+  
+  .table-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background: #121728;
+    border-radius: 10px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #5e72e4;
+    border-radius: 10px;
+  }
+  
+  .image-preview-container {
+    margin-top: -62px;
+    text-align: center;
+  }
+  
+  .image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    background: linear-gradient(90deg, #5e72e4 0%, #825ee4 100%);
+    color: #ffffff;
+    padding: 15px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 600;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .card-body {
+    padding: 25px;
+    color: #e6e8f0;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    color: #e6e8f0;
+  }
+  
+  .table th {
+    background: rgba(94, 114, 228, 0.2);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  
+  .table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s;
+  }
+  
+  .table tr:hover {
+    background-color: rgba(94, 114, 228, 0.1);
+  }
+  
+  .input {
+    margin: 13px;
+    height: 40px;
+    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(20, 25, 41, 0.7);
+    border-radius: 6px;
+    padding: 0 15px;
+    color: #e6e8f0;
+    transition: all 0.3s;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #5e72e4;
+    box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.3);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #5e72e4 0%, #825ee4 100%);
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    background: linear-gradient(90deg, #4d5b9e 0%, #3c4c8b 100%);
+    color: #fff;
+  }
+  
+  .btn-success {
+    background: linear-gradient(90deg, #2dce89 0%, #2dcecc 100%);
+    color: #fff;
+    width: 90px;
+  }
+  
+  .upload-label {
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #e6e8f0;
+  }
+  
+  .upload-label input[type="file"] {
+    background-color: rgba(20, 25, 41, 0.7);
+    border-radius: 6px;
+    padding: 8px;
+    color: #e6e8f0;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .component-space {
+      padding: 10px;
+    }
+  
+    .card-body {
+      padding: 15px;
+    }
+  
+    .table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .table th, .table td {
+      white-space: nowrap;
+      padding: 8px 12px;
+    }
+  
+    .pagination {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .btn {
+      padding: 8px 12px;
+      font-size: 14px;
+      width: 100%;
+    }
+  
+    .btn-success {
+      width: 100%;
+    }
+  
+    .upload-label {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
