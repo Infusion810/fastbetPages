@@ -172,6 +172,21 @@ console.log(matchOddsTotal, "matchOddsTotal1")
 
   return (
     <>
+      <div className="scorecard" style={{ paddingTop: "0px" }}>
+        <LiveScoreContainer>
+          {iframeUrl ? (
+            <iframe
+              src={iframeUrl}
+              width="100%"
+              height="100%"
+              title="Live Score"
+              style={{ border: "none" }}
+            ></iframe>
+          ) : (
+            <PlaceholderText>Live Score Not Available</PlaceholderText>
+          )}
+        </LiveScoreContainer>
+      </div>
       <div className="T20_container">
         <ToastContainer
           position="top-center"
@@ -267,6 +282,28 @@ console.log(matchOddsTotal, "matchOddsTotal1")
     </>
   );
 };
+
+const LiveScoreContainer = styled.div`
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  width: 100%;
+  height: 218px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+      
+`;
+const PlaceholderText = styled.p`
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 const T20 = () => (
   <OverMarketProvider>
